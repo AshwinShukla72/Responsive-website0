@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link css style sheet-->
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+</head>
+    <body>
+        <!--Banner Section -->
+        <section class="banner" id="sec">
+            <!--Header -->
+            <header>
+                <a href="#" class="logo">Studio BetaRoots</a>
+                <!--Using JS to make onclick usage -->
+                <div id="toggle" onclick=toggle()></div>
+            </header>
+            <div class="content">  
+                <h2>Welcome part<br>I'm<span> Dummy Name</span>
+                </h2>
+                <!--Dummy Text-->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea aperiam explicabo, deleniti ratione suscipit ex delectus rem sapiente nisi quos inventore fugiat voluptatibus ab eos vel recusandae adipisci hic labore.</p>
+                <!--Link to other parts-->
+                <a href="#">Know More</a>
+            </div>
+            <!--links to Social accounts and dummy images sources flaticon-->
+            <ul class="imgTag">
+              <li><a href="#"><img src="facebook.png"></a></li>
+              <li><a href="#"><img src="GitHub-Mark-64px.png"></a></li>
+              <li><a href="#"><img src="instagram.png"></a></li>
+            </ul>
+        </section>
+        <!--Side Nav options-->
+        <div id="navigation">
+            <!--Dummy nav options-->
+            <ul>
+                <li><a href="#>">Home</a></li>
+                <li><a href="#>">About</a></li>
+                <li><a href="#>">Services</a></li>
+                <li><a href="#>">Portfolio</a></li>
+                <li><a href="#>">Contact</a></li>
+            </ul>
+        </div>
+    <!--Using Javascript  for basic functions to make website responsive-->
+    <script type="text/javascript">
+    
+        function toggle(){
+            var sec=document.getElementById('sec');
+            var nav=document.getElementById('nav');
+            sec.classList.toggle("active");
+            nav.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
