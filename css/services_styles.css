@@ -1,0 +1,246 @@
+/*Global declaration of font used ientire css will inherit this*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/*global part of css settings*/
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/*layout settings for header*/
+header{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 100px;
+    /*header tag given highest stack position*/
+    z-index: 10000;
+
+    transition: 0.6s;
+}
+/*layout setting for banner class under section tag*/
+section .banner{
+    position: relative;
+    width: 100%;
+    min-height:100vh;
+    padding: 100px;
+    background: url(..9bMowI.jpg);
+    background-size: cover;
+    display:flex;
+    align-items: center;
+    overflow: hidden;
+}
+/*Layout setting for logo class under header tag*/
+header .logo{
+    position: relative;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration:none;
+    font-size: 20px;
+    text-transform:uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+/*layout settings for "TOGGLE" id under header*/
+header #toggle{
+    position: relative;
+    width:30px;
+    height: 30px;
+    cursor: pointer;
+}
+/*layout setting to give header animation feature to header before usage of onclick*/
+header #toggle:before{
+    content:'';
+    position: absolute;
+    top:7px;
+    width: 100%;
+    height:2px;
+    background: #ffffff;
+}
+/*layout setting to give header animation feature to header after on click, check chrome console to confirm if it switches to active class or not*/
+header #toggle:after{
+    content:'';
+    position: absolute;
+    bottom: 7px;
+    width: 100%;
+    height:2px;
+    background: #ffffff;
+}
+/*layout setting to give animation feature to banner to provide responsive look before on click*/
+.banner.active header #toggle::before{
+    top:50%;
+    letter-spacing: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+/*layout setting to give animation feature to banner to provide responsive look after onclick*/
+.banner.active header #toggle::after{
+    top:50%;
+    letter-spacing: 50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+
+}
+/*setting up features of banner class*/
+.banner{
+    position: absolute;
+    width: 100%;
+    min-height:100vh;
+    padding: 100px;
+    background: url(../9bMowI.jpg);
+    background-size: cover;
+    display:flex;
+    place-items: center;
+    /*transitioon time setting*/
+    transition: 0.5s;
+    /*setting up position of stack*/
+    z-index: 2;
+}
+/*transforming banner such that the x axis moves 400pixels to the left*/
+/*selecting all elements of banner class and active class within its attributes*/
+.banner.active {
+    transform: translateX(-400px);
+
+}
+/*Basic set up of features for navigation id*/
+/*further adding place-item & grid to make sure that the side nav moves in correct arrangement*/
+#navigation{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    background: #fb5507;
+/*place z index is below banner class*/
+    z-index: 1;
+/*further adding place-item & grid to make sure that the side nav moves in correct arrangement*/
+    display: grid;
+    padding: 30px;
+    place-items: center;
+    transition: 0.4s;
+}
+/*select id and and all elements under active class*/
+#navigation.active {
+    right: 0;
+}
+/*select all ul under navigation*/
+#navigation ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+/*select all ul and li under navigation*/
+#navigation ul li {
+    list-style-type: none;
+}
+/*select all ul li and a under navigation*/
+#navigation ul li a {
+    color:#fff;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
+/*Content class*/
+.content{
+    max-width:600px;
+}
+
+.content h2{
+    color:#fff;
+    font-size: 2.5em;
+}
+.content h2 span{
+    color:#fb5507;
+    font-size: 1.2em;
+}
+.content p{
+    font-size: 1.2em;
+    color:#ffffff;
+    font-weight:300;
+
+}
+
+.content a{
+    position: relative;
+    display: inline-block;
+    margin-top:20px;
+    background: #ffffff;
+    columns: #000000;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+/*imgTag class setup*/
+.imgTag{
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    right: 100px;
+
+}
+
+.imgTag li{
+    list-style:none;
+}
+
+.imgTag li a{
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    text-decoration: none ;
+    border: 1px solid #ffffff;
+    margin: 10px 0 0;
+}
+
+.imgTag li a:hover{
+    background: #ffffff;
+}
+.imgTag li a img{
+    max-width: 20px;
+    filter: invert(1);
+    mix-blend-mode: difference;
+}
+/*Setting up responsive media queries*/
+/*adding breakpoint at 767px alter as needed*/
+@media (max-width: 767px){
+    header{
+        padding: 20px 50px;
+    }
+    .bannner{
+        padding: 100px 50px 150px;
+    }
+    .banner h2{
+        font-size: 1.8em;
+    }
+    .banner .content p, .banner .content a{
+        font-size: 1em;
+    }
+   .banner .active{
+       transform: translateX(-250px);
+   }
+   #navigation {
+       width: 250px;
+   }
+   #navigation ul li a {
+        font-size:1.5em;
+        margin: 5px 0;
+   }
+   .imgTag{
+       position: absolute;
+       bottom: 50px ;
+       right: initial;
+       flex-direction: row-reverse;
+   }
+   .imgTag li a{
+        margin: initial;
+        margin-right: 10px;
+   }
+}
